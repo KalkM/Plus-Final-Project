@@ -42,9 +42,16 @@
             </div>
           </form>
           <h1 id="city"></h1>
-
           <div class="row">
             <div class="col-8">
+              <ul>
+                <li id="date"></li>
+                <li id="weather-type"></li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+            <div class="col-4">
               <div class="d-flex weather-temperature">
                 <img src="" alt="" id="weather-icon" class="float-left" />
                 <div>
@@ -52,14 +59,6 @@
                   ><span class="units"> °C </span>
                 </div>
               </div>
-            </div>
-            <div class="col-4">
-              <ul>
-                <li id="date"></li>
-                <li id="weather-type"></li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
             </div>
           </div>
           <div class="weather-forecast" id="forecast"></div>
