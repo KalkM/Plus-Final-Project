@@ -38,7 +38,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
@@ -52,6 +52,7 @@ function displayForecast(response) {
           width="42"
         />
         <div class="weather-forecast-temperatures">
+       
           <span class="weather-forecast-temperature-max"> ${Math.round(
             forecastDay.temp.max
           )}° </span>
@@ -75,7 +76,6 @@ function getForecast(coordinates) {
 }
 
 function displayWeather(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
 
   weatherType.innerHTML = response.data.weather[0].main;
