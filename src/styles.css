@@ -70,14 +70,6 @@ li {
 .search-form {
   margin-bottom: 20px;
 }
-.weather-temperature .active {
-  color: rgb(33, 33, 33);
-  cursor: default;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
 
 .weather-forecast {
   margin-top: 20px;
