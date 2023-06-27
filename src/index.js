@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -33,9 +34,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -77,12 +76,12 @@ function getForecast(coordinates) {
 
 function displayWeather(response) {
   let temperature = Math.round(response.data.main.temp);
-
-  weatherType.innerHTML = response.data.weather[0].main;
+  weatherType.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   tempElement.innerHTML = temperature;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
   weatherIconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -107,8 +106,6 @@ searchForm.addEventListener("submit", search);
 
 let cityElement = document.querySelector("#city");
 let dateElement = document.querySelector("#date");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
 let weatherType = document.querySelector("#weather-type");
 let tempElement = document.querySelector("#temperature");
 let windElement = document.querySelector("#wind");

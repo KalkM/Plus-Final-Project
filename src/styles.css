@@ -84,9 +84,14 @@ li {
 }
 
 .weather-forecast-temperature-min {
+  color: #f65282;
   opacity: 0.5;
 }
 
 .weather-forecast-temperatures {
+  color: #f65282;
   font-size: 13px;
+}
+.imp-data {
+  color: #f65282;
 }
